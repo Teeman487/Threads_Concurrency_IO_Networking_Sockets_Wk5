@@ -1,0 +1,52 @@
+Two ways we can create Threads2
+1. create an instance of a runnable interface : public class Thread2 implements Runnable
+
+1. You passed a runnable instance which will set ths target of the run() and then your instance method will be exexuted
+Set the target !=null -- you provided implemntation of the target running interface--target.run
+Condition:
+public void run() {
+        Runnable task = holder.task;
+        if (task != null) {
+            target.run();
+        }
+
+2. extend this particular Threadclass and provide my own method (Overloading constructor)
+
+
+Interview QA; Which of the two ways is preffered in creaeting Thread and Explain why?
+Answer:
+1. if i try to follow this method [public class Thread1 extends Thread], what if my class wants to extend other classes with it
+I know in java, i cannot extend multiple classes(it has no concept); im constrained--- multiple inheritances is not supported in java --there is constraint to our design
+
+2. if my class wants to implement some other interfaces besides Runnable; im allowed to do it, bcus
+java supports implementation of multiple interfaces----multiple interfaces is supported in Java ---No constrain in implementation
+(The better way and mostly thats mostly what all developers follow)
+
+
+------------------------
+isFull() { // not changing or updating the current state
+
+ push() and pop() is changing the state of the current object // and you cant allow
+ multiple threads to change the cuurent state in such a way bcus if
+ you allow multiple threads to have access to functions that keep
+ changing your state then you will run into incosistency  very soon..
+
+solution----
+you have to define a methodology where you will say; my function should only
+be accessed by one thread at a time:   even if the thread is sleeping, no other
+thread will execute other functions; I will first complete and then allow
+other threads to continue..
+
+Think of a Door: Multiple threads waiting outside the door and stackTop(shared
+resource) that is there inside the door; inorder to get inside the door
+you will allow one thread to get inside the door, then do all the operation it wants
+to do with the shared resource(stackTop) then come out of the room then only
+you will let othe threads to enter,...how do we say which thread will enter
+the room; that is been done by concept of lock; which everthread that has the
+lock would be able to enter the room and do the operation with the shared resource
+and fully complete is work, get down of the room and hands the lock to jva,
+the jva or schedular will decide whichthread it should give the lock to,
+on the basis of that, other threads will go in
+
+To ensure only one thread will access this piece of code, we have to use
+Synchronize Key word or lock
