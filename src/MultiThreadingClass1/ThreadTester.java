@@ -1,7 +1,7 @@
 package MultiThreadingClass1;
 // user thread1 = not running        user thread1=not run       user thread1 = dies             user thread1 = exists
 // Daemon thread = run               Program     = run          Daemon thread = no exists        Program   =  might not run
-// If there is no user thread(thread1) running it is up to the mercy of JVA to either run the  Daemon thread or let the Daemon thread run or continue its job
+// If there is no user thread(thread1) running it is up to JVM to either run the  Daemon thread or let the Daemon thread run or continue its job
 // A program will only run if there is no user thread running even if there are couples of Daemon threads running and no user thread runnung, the program my dominate
 // if the user thread dies, Daemon thread has no existence functionality
 // program will not keep running if the user Thread exists. might not run if the Demon thread exist without the User Thread

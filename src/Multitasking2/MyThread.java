@@ -1,6 +1,6 @@
 package Multitasking2;
 
-// 1 of 2 ways of creating a thread
+// 1 of 2 ways of creating a thread --Inheritance
 public class MyThread extends Thread{
     @Override
     public void run() {

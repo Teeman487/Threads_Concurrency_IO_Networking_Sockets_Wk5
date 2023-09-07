@@ -1,0 +1,21 @@
+                   Thread
+
+                    SW -- (2+2 operation) will go to OS and (OS will send request to CPU for execution)
+                    OS -- within OS there are multiple SWs
+                    HW --CPU(used to run application)[It executes something]
+                       --ram(used to run application)[has temporary memory for your processing]
+
+                 Multiple Threads
+
+SW(1)   SW(2)  SW(3) -- (2+2,3+1,3+6 operations) will go to OS and OS will send request to CPU for execution
+        OS -- [within OS there are multiple SWs] OS should support multiple SWs running at same time - Multitasking
+        HW --CPU(used to run application)[It executes something]
+           --ram(used to run application)[has temporary memory for your processing]
+
+            On the CPU there is a concept called Time Sharing:  SW(1)   SW(2)  SW(3)
+            OS can say:  SW(1) execute and then SW(2) and  SW(3) - execution by sharing the time - Multiple tasking: browsing webpage, listening to Quran simultaneously
+
+            SW(3) can be split further into (Thread): Meaning, it is not just about Multitasking, we can also divide our task into smaller things E,g Writing Test on software and showing error at same Time in the same SoftWare
+
+
+
